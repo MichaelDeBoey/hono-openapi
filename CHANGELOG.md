@@ -1,4 +1,36 @@
 # Changelog
+## 1.6.0
+
+### New Features ✨
+
+#### Openapi
+
+- Optionally write output components over their input form by @MichaelDeBoey in [#298](https://github.com/rhinobase/hono-openapi/pull/298)
+- Add an option to share components with closed output forms by @MichaelDeBoey in [#302](https://github.com/rhinobase/hono-openapi/pull/302)
+- Support QUERY with conditional OpenAPI 3.2 by @MathurAditya724 in [#303](https://github.com/rhinobase/hono-openapi/pull/303)
+- Add an option to document hidden routes by @MichaelDeBoey in [#300](https://github.com/rhinobase/hono-openapi/pull/300)
+
+#### Other
+
+- (types) Accept specification extensions on an operation by @MichaelDeBoey in [#313](https://github.com/rhinobase/hono-openapi/pull/313)
+
+### Bug Fixes 🐛
+
+#### Openapi
+
+- Convert `resolver()` schemas in `documentation.webhooks` by @MichaelDeBoey in [#315](https://github.com/rhinobase/hono-openapi/pull/315)
+- Avoid duplicating inherited security requirements by @MathurAditya724 in [#317](https://github.com/rhinobase/hono-openapi/pull/317)
+- Count only the schemas documentation declares itself by @MichaelDeBoey in [#311](https://github.com/rhinobase/hono-openapi/pull/311)
+- Give a response its plain name when no request refers to it by @MichaelDeBoey in [#296](https://github.com/rhinobase/hono-openapi/pull/296)
+
+#### Other
+
+- (schema) Preserve JSON defaults with updated converters by @MathurAditya724 in [#327](https://github.com/rhinobase/hono-openapi/pull/327)
+
+### Internal Changes 🔧
+
+- (deps) Update vulnerable development dependencies by @MathurAditya724 in [#318](https://github.com/rhinobase/hono-openapi/pull/318)
+
 ## 1.5.0
 
 ### Bug Fixes 🐛
