@@ -114,8 +114,11 @@ export function resolver<Schema extends StandardSchemaV1>(
           : undefined),
       };
 
+      // A top-level `io` from the caller wins over this default
       const directionOptions =
-        direction === "output" ? outputOptions(schema) : undefined;
+        direction === "output" && context.io === undefined
+          ? outputOptions(schema)
+          : undefined;
 
       return toOpenAPISchema(
         schema,

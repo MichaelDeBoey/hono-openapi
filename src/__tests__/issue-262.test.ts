@@ -167,6 +167,18 @@ describe("response schemas", () => {
     expect(response?.required).toEqual(["title"]);
   });
 
+  it("keep converting an ArkType schema as input for a top-level `io` option", async () => {
+    const Note = type({ pinned: "boolean = false", title: "string" });
+    const app = new Hono().get(
+      "/notes",
+      describeRoute({ responses: json(Note, { io: "input" }) }),
+      (c) => c.json(Note.assert({ title: "Groceries" })),
+    );
+
+    const { response } = await operationOf(app, "/notes", "get");
+    expect(response?.required).toEqual(["title"]);
+  });
+
   it("keep converting an ArkType schema as output for another vendor's input option", async () => {
     const Note = type({ pinned: "boolean = false", title: "string" });
     const app = new Hono().get(
